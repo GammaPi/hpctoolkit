@@ -437,7 +437,7 @@ perf_util_attr_init(
             precise_ip = precise_ip_type;
   }
 
-  attr->precise_ip    = precise_ip;
+  attr->precise_ip    = 2;
 
 
   return true;

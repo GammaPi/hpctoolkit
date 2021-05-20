@@ -393,6 +393,7 @@ help_hpcrun_backtrace2cct(cct_bundle_t* bundle, ucontext_t* context,
 	 (bt.last == bt.begin || 
 	  ! hpcrun_inbounds_main(hpcrun_frame_get_unnorm(bt.last - 1)))) {
       hpcrun_bt_dump(TD_GET(btbuf_cur), "WRONG MAIN");
+      fprintf(stderr,"help_hpcrun_backtrace2cct caused drop\n");
       hpcrun_stats_num_samples_dropped_inc();
       bt.partial_unwind = true;
     }

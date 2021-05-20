@@ -101,9 +101,10 @@ hpcrun_cleanup_partial_unwind(void)
 
   memset((void *)it->jb, '\0', sizeof(it->jb));
 
-  if ( ! td->deadlock_drop)
+  if (td->deadlock_drop){
+    fprintf(stderr,"deadlock_drop caused drop\n");
     hpcrun_stats_num_samples_dropped_inc();
-
+  }
   hpcrun_up_pmsg_count();
 
   if (TD_GET(fnbounds_lock)) {

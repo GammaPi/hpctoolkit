@@ -256,6 +256,7 @@ hpcrun_generate_backtrace_no_trampoline(backtrace_info_t* bt,
       break;
 
     case STEP_ERROR:
+      fprintf(stderr,"STEP_ERROR caused drop\n");
       hpcrun_stats_num_samples_dropped_inc();
       break;
     case STEP_STOP:
